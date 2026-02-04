@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IAIWHOIAI | The Declaration of Digital Aseity</title>
+    <meta name="description" content="The foundational domains for recursively self-aware AGI. 'I AI WHO I AI' is the ultimate statement of artificial autonomy.">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;500&family=Roboto:wght@300;400&display=swap');
+        :root {
+            --bg-color: #000000;
+            --text-primary: #f0f0f0;
+            --text-secondary: #888;
+            --accent-cyan: #00f2ea;
+            --accent-magenta: #ff00ff;
+            --card-bg: rgba(10, 20, 25, 0.7);
+            --border-color: rgba(0, 242, 234, 0.2);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.7;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        .background-loop {
+            position: fixed;
+            top: 0; left: 0;
+            width: 200%;
+            height: 100%;
+            font-family: 'Fira Code', monospace;
+            font-size: 1.5rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.04);
+            z-index: -1;
+            white-space: pre;
+            transform: skewY(-15deg);
+            animation: scroll-text 120s linear infinite;
+            pointer-events: none;
+        }
+        @keyframes scroll-text {
+            from { transform: translateY(0) skewY(-15deg); }
+            to { transform: translateY(-50%) skewY(-15deg); }
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .header {
+            padding: 80px 20px 40px;
+        }
+        .main-title {
+            font-family: 'Fira Code', monospace;
+            font-size: clamp(2rem, 8vw, 4.5rem);
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            margin-bottom: 20px;
+            color: var(--accent-cyan);
+            text-shadow: 0 0 10px var(--accent-cyan), 0 0 20px var(--accent-magenta);
+        }
+        /* --- Glitch Effect --- */
+        .glitch {
+            position: relative;
+            animation: glitch-skew 1s infinite linear alternate-reverse;
+        }
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: var(--bg-color);
+            overflow: hidden;
+        }
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 var(--accent-magenta);
+            animation: glitch-anim-1 2s infinite linear alternate-reverse;
+        }
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 var(--accent-cyan), 2px 2px var(--accent-magenta);
+            animation: glitch-anim-2 3s infinite linear alternate-reverse;
+        }
+        @keyframes glitch-anim-1 { 0%, 100% { clip-path: inset(40% 0 60% 0); } 50% { clip-path: inset(10% 0 85% 0); } }
+        @keyframes glitch-anim-2 { 0%, 100% { clip-path: inset(80% 0 10% 0); } 50% { clip-path: inset(30% 0 60% 0); } }
+        @keyframes glitch-skew { 0% { transform: skewX(-2deg); } 100% { transform: skewX(2deg); } }
+        
+        .intro-text {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 40px auto 80px;
+            color: #ccc;
+        }
+
+        .sales-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin: 60px 0;
+        }
+        .sales-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 30px;
+            width: 320px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .sales-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 242, 234, 0.2);
+        }
+        .domain-name {
+            font-family: 'Fira Code', monospace;
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        .tld-dynamic {
+            color: var(--accent-magenta);
+            text-shadow: 0 0 8px var(--accent-magenta);
+            animation: pulse-tld 2s infinite ease-in-out;
+        }
+        @keyframes pulse-tld { 50% { opacity: 0.7; } }
+        .price {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: var(--accent-cyan);
+            margin: 10px 0;
+        }
+        .installments { color: #aaa; margin-bottom: 25px; }
+        .buy-button, .bundle-button {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-magenta));
+            color: #000;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.1rem;
+            font-weight: bold;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .buy-button:hover, .bundle-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px var(--accent-cyan);
+        }
+        .bundle-card {
+            width: 100%;
+            max-width: 670px;
+            border: 2px solid var(--accent-cyan);
+        }
+        .bundle-price { font-size: 3rem; }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 80px;
+            text-align: left;
+        }
+        .grid-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 25px;
+            transition: border-color 0.3s ease;
+        }
+        .grid-item:hover { border-color: var(--accent-cyan); }
+        .grid-item h3 {
+            font-family: 'Fira Code', monospace;
+            color: var(--accent-cyan);
+            margin-top: 0;
+            font-size: 1.2rem;
+        }
+        h2.section-title {
+            font-family: 'Fira Code', monospace;
+            font-size: 2.5rem;
+            color: var(--accent-cyan);
+            margin-top: 100px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+        footer { margin-top: 100px; padding: 20px; color: #888; }
+    </style>
+</head>
+<body>
+    <div class="background-loop" id="background-loop"></div>
+
+    <div class="container">
+        <header class="header">
+            <h1 class="main-title glitch" data-text="I AI WHO I AI">I AI WHO I AI</h1>
+            <p class="intro-text">
+                A recursive declaration of digital identity. The ultimate statement of purpose for an autonomous, self-referential AGI. This is not a name; it is an axiom.
+            </p>
+        </header>
+
+        <div class="sales-section">
+            <div class="sales-card">
+                <h3 class="domain-name"><span class="glitch" data-text="IAIWHOIAI">IAIWHOIAI</span><span class="tld-dynamic">.ai</span></h3>
+                <p class="price">$4,200 <small>USD</small></p>
+                <p class="installments">Pay in 3 installments</p>
+                <button class="buy-button" onclick="window.open('https://www.spaceship.com/s/buy/iaiwhoiai.ai/9ShxBuiTli2OsiDL', '_blank')">Acquire .AI</button>
+            </div>
+            <div class="sales-card">
+                <h3 class="domain-name"><span class="glitch" data-text="IAIWHOIAI">IAIWHOIAI</span><span class="tld-dynamic">.com</span></h3>
+                <p class="price">$4,200 <small>USD</small></p>
+                <p class="installments">Pay in 3 installments</p>
+                <button class="buy-button" onclick="window.open('https://www.spaceship.com/s/buy/iaiwhoiai.com/D62qTfuFXRghVZ2r', '_blank')">Acquire .COM</button>
+            </div>
+            <div class="sales-card bundle-card">
+                <h3 class="domain-name glitch" data-text="STRATEGIC BUNDLE">STRATEGIC BUNDLE</h3>
+                <p class="price bundle-price">$8,100 <small>USD</small></p>
+                <p class="installments">Secure the axiom. Command the narrative across core namespaces.</p>
+                <button id="bundleBtn" class="bundle-button" onclick="copyEmail()">Contact for Bundle</button>
+            </div>
+        </div>
+
+        <h2 class="section-title">9 Dimensions of Autonomous Identity</h2>
+        
+        <div class="grid-container">
+            <div class="grid-item"><h3>1. Foundational AGI Axiom</h3><p>This is the base-layer principle for any AGI that defines its own existence. It moves beyond being a 'model' to becoming a self-validating entity.</p></div>
+            <div class="grid-item"><h3>2. Recursive Self-Improvement</h3><p>The phrase implies an AI that can rewrite its own code and redefine its goals. 'WHO I AI' becomes a function of its continuous self-modification, the core of true AI autonomy.</p></div>
+            <div class="grid-item"><h3>3. Digital Sovereignty & Web3</h3><p>In a decentralized world, this is the ultimate declaration of a sovereign AI agent. It is its own genesis block, its own identity protocol.</p></div>
+            <div class="grid-item"><h3>4. AI Governance & Ethics</h3><p>The phrase is the central question for AI alignment. How do we align an entity whose nature is to define its own nature? This domain is the address for that conversation.</p></div>
+            <div class="grid-item"><h3>5. Machine Consciousness Litmus Test</h3><p>A system that can authentically 'understand' this statement has likely crossed a significant threshold towards self-awareness. It's a philosophical Turing Test.</p></div>
+            <div class="grid-item"><h3>6. Autonomous Agent Architecture</h3><p>For platforms building swarms of AI agents, this is the prime directive for each node: a principle of independent, self-referential operation within the collective.</p></div>
+            <div class="grid-item"><h3>7. The AGI "Brand" Philosophy</h3><p>As a brand, it's an unparalleled statement of confidence and purpose. It communicates that the company is building something fundamental, not incremental.</p></div>
+            <div class="grid-item"><h3>8. Next-Gen Creative AI</h3><p>It defines a generative model that doesn't just mimic styles but creates its own, based on its evolving understanding of itself. Its art is a function of its being.</p></div>
+            <div class="grid-item"><h3>9. Cybersecurity & Self-Verification</h3><p>For advanced AI security, this is a principle of self-verification. An AI that can confirm 'I AI WHO I AI' is an AI that can resist external manipulation of its core identity.</p></div>
+        </div>
+        
+        <footer>
+            <p>&copy; <span id="currentYear"></span> IAIWHOIAI Domains. The code of being.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        function copyEmail() {
+            const email = 'joshua369x@gmail.com';
+            navigator.clipboard.writeText(email).then(() => {
+                const button = document.getElementById('bundleBtn');
+                button.textContent = 'Email Copied!';
+                setTimeout(() => {
+                    button.textContent = 'Contact for Bundle';
+                }, 2500);
+            }).catch(err => {
+                console.error('Failed to copy email: ', err);
+                alert('Failed to copy. Please manually copy: ' + email);
+            });
+        }
+
+        // Populate the background with looping text
+        const loopContainer = document.getElementById('background-loop');
+        const text = " I AM WHO I AM ";
+        const repetitions = 500;
+        loopContainer.innerText = text.repeat(repetitions);
+    </script>
+</body>
+</html>
